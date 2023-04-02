@@ -1,0 +1,43 @@
+<!-- obsługa użytkowników -->
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TI-Lab10</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    Witaj świecie w index.ejs <br/>
+    <div class="user">
+    Username: <%=username %> <br/>
+    </div>
+    </br></br>
+    <% if (uzytkownik) { %>
+        <div class="user">
+            Witaj, jesteś zalogowany jako:   <b><%= uzytkownik.username %></b></br>
+            Twoje uprawnienia mają wartość:     <b> <%= uzytkownik.permissions %> </b></br>
+            <b><a href="/wyloguj">Wyloguj</a></b>
+        </div>
+    <% } else { %>
+        Jesteś niezalogowany. <a href="/zaloguj">Zaloguj się</a>
+    <% } %>
+    </br></br>
+    <table>
+    <tr>
+        <th>ID</th>
+        <th>Nazwa</th>
+        <th>Szczegóły</th>
+    </tr>
+    <% lista.forEach( element => { %>
+        <tr>
+            <td><%= element.id %></td>
+            <td><%= element.nazwa %></td>
+            <td><a href="/api/lista/<%= element.id %>">Wyświetl szczegóły</a></td>
+        </tr>
+    <% }) %>
+</body>
+</html>

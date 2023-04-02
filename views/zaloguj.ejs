@@ -1,0 +1,35 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TI-Lab10</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <form method="post">
+        <div id="login">
+            <div>
+                <h4>Logowanie</h4>
+            </div>
+            <div>
+                <label>Nazwa Użytkownika</label>
+                <input type="text" name="txtUser"/>
+            </div>
+            <div>
+                <label>Hasło Uzytkownika</label>
+                <input type="password" name="txtPwd"/>
+            </div>
+            <div>
+                <button>ZALOGUJ</button>
+            </div>
+        </div>
+        <% if (locals.message) { %>
+            <div class="message">
+                <%= locals.message %>
+            </div>
+        <% } %>
+    </form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+body {
+    background: #303030;
+    color: white;
+    padding: 50px;
+    font: 14px "Lucida Grande", Arial, sans-serif;
+}
+
+a {
+    color: #00b7ff;
+}
+
+.user {
+    color: blue;
+}
